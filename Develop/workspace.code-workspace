@@ -1,0 +1,13 @@
+{
+  "folders": [
+	{
+		"name": "Develop",
+		"path": "."
+	},
+	{
+		"name": "Homework",
+		"path": "../../Homework"
+	}
+],
+  "settings": {}
+}
