@@ -1,7 +1,3 @@
-// Assignment code here
-// function generatePassword() {
-//   console.log("is it working?");
-// }
 // 1. Need to do promt//
 function generatePassword() {
   // get password length
@@ -111,12 +107,11 @@ function generateRandomUppercaserLetter() {
 let generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
-function writePassword() {
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", function () {
   let password = generatePassword();
 
   document.querySelector("#password").innerHTML = password;
   console.log(password);
-}
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+});
