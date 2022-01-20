@@ -12,4 +12,4 @@ index.html
 css
 javascript
 
-(/path/to/Develop/images/screenshot.png "Text to show on mouseover")
+(/path/to/images/screenshot.png "screenshot")
