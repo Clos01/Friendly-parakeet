@@ -12,4 +12,10 @@ index.html
 css
 javascript
 
-(/path/to/images/screenshot.png "screenshot")
+#
+
+![appscreenshot](/images/screenshot.png)
+
+## Website
+
+https://clos01.github.io/Friendly-parakeet/
