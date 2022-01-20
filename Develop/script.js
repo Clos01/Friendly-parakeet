@@ -1,14 +1,13 @@
 // Assignment code here
-function generatePassword() {
-  console.log("is it working?");
-}
+// function generatePassword() {
+//   console.log("is it working?");
+// }
 // 1. Need to do promt//
 function generatePassword() {
-  let passwordText = "";
   // get password length
   // TODO: only allow more than 8 characters and less than 128
   let charLength = prompt(
-    "how many Characters would you like your password to conain?"
+    "how many Characters would you like your password to contain?"
   );
 
   // Check if input can be converted into a Number
@@ -32,30 +31,45 @@ function generatePassword() {
         "Click ok to Confirm including uppercase characters"
       );
 
-      // while passwordText length is < charLength
-      while (passwordText.length < charLength) {
-        // **************************************
-        if (hasSpecialCharacter && passwordText.length < charLength) {
-          passwordText += generateSpecialCharacter();
+      if (
+        hasSpecialCharacter ||
+        hasNumCharacter ||
+        hasLowerCase ||
+        hasUpperCase
+      ) {
+        let passwordText = "";
+        // while passwordText length is < charLength
+        while (passwordText.length < charLength) {
+          // **************************************
+          if (hasSpecialCharacter && passwordText.length < charLength) {
+            passwordText += generateSpecialCharacter();
+          }
+          if (hasNumCharacter && passwordText.length < charLength) {
+            passwordText += generateRandumNumber();
+          }
+          if (hasLowerCase && passwordText.length < charLength) {
+            passwordText += generateRandomLowercaserLetter();
+          }
+          if (hasUpperCase && passwordText.length < charLength) {
+            passwordText += generateRandomUppercaserLetter();
+          }
         }
-        if (hasNumCharacter && passwordText.length < charLength) {
-          passwordText += generateRandumNumber();
-        }
-        if (hasLowerCase && passwordText.length < charLength) {
-          passwordText += generateRandomLowercaserLetter();
-        }
-        if (hasUpperCase && passwordText.length < charLength) {
-          passwordText += generateRandomUppercaserLetter();
-        }
+        return passwordText;
+      } else {
+        alert(
+          "Please select at least one type of character for your password "
+        );
+        writePassword();
       }
-      return passwordText;
     } else {
       alert(
         "Please correct it, no less than 8 character and no greater than 128"
       );
+      writePassword();
     }
   } else {
     alert("Please correct it, you must enter numeric values");
+    writePassword();
   }
 }
 
